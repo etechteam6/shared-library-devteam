@@ -4,7 +4,7 @@ def call(String repoUrl) {
        stages {
            stage("Tools initialization") {
                steps {
-                   sh 'lscpu'
+                   checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-cred', url: 'https://github.com/etechteam6/team6-shared-library.git']])
                    sh 'java -version'
                }
            }

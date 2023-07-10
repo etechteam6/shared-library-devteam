@@ -2,9 +2,9 @@ def call(String repoUrl) {
     pipeline {
        agent any
        stages {
-           stage("Tools initialization") {
+           stage('clonecode') {
                steps {
-                   sh 'lscpu'                   
+                   checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-cred', url: 'https://github.com/etechteam6/team6-shared-library.git']])                   
                    sh 'java -version'
                }
            }

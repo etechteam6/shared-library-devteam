@@ -7,16 +7,16 @@
                     sh 'free -g'
                 }
             }
-            stage('Checkout Code'){
-                steps{
+            stage('Checkout Code') {
+                steps {
                     git branch: 'main',
                            url: "${repoUrl}"
                 }
             }
             stage('closing'){
-                steps{
-                    echo "new demo"
-                }
+             steps{
+                 echo "new demo"
+             }
             }
         }
     }

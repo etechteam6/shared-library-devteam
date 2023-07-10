@@ -7,10 +7,10 @@
                     sh 'free -g'
                 }
             }
-            stage('Checkout Code') {
-                steps {
-                    git branch: 'main',
-                           url: "${repoUrl}"
+            stage("Checkout Code") {
+               steps {
+                   git branch: 'main',
+                          url: "${repoUrl}"
                 }
             }
             stage('closing'){

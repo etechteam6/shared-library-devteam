@@ -1,4 +1,4 @@
-def call(String repoUrl){
+def uber(String repoUrl){
     pipeline{
         agent any
         stages{
@@ -9,7 +9,7 @@ def call(String repoUrl){
             }
             stage("Checkout Code") {
                 steps {
-                    git brain: 'main',
+                    git branch: 'main',
                           url: "${repoUrl}"
                 }
             }
@@ -17,7 +17,7 @@ def call(String repoUrl){
                 steps{
                     echo "new demo"
                 }
-            }
+            } 
         }
     }
 }

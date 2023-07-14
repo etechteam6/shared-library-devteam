@@ -7,10 +7,10 @@ def uber(String repoUrl){
                     sh 'free -g'  
                 }
             }
-            stage('Checkout Code') {
+            stage("Checkout Code") {
                 steps {
-                    git brain: 'main'
-                            url: "${repoUrl}"
+                    git brain: 'main',
+                          url: "${repoUrl}"
                 }
             }
             stage('closing'){
